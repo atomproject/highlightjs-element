@@ -6,7 +6,15 @@
 <dom-module id="highlightjs-element">
   <template>
     <style include="github-gist-theme"></style>
-    <style>:host { display: block; }</style>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .hljs {
+        overflow-x: var(--allow-overflow-x, auto);
+      }
+    </style>
     <!-- we need the `xml` class for better highlighting,
     it is not provided by the element by Polymer -->
     <pre><code id="content" class$="{{highlightClasses(lang)}}"></code></pre>
